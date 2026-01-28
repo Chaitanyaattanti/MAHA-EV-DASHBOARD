@@ -55,43 +55,53 @@ function Home() {
     marginBottom: "2rem",
     padding: "2rem",
     flexWrap: "wrap",
+    background: "#f9f9f9",
+    borderRadius: "8px",
+    border: "1px solid #ddd",
   };
 
   const logoStyle = {
     height: "120px",
     width: "auto",
     objectFit: "contain",
+    background: "white",
+    padding: "1rem",
+    borderRadius: "8px",
+    border: "1px solid #e0e0e0",
   };
 
   return (
     <div style={containerStyle}>
       <div style={logoContainerStyle}>
+        <img src="/ANRF.png" alt="VidyutAI Logo" style={logoStyle} />
         <img src="/spel-logo.png" alt="SPEL Lab Logo" style={logoStyle} />
         <img src="/iitgn-logo.png" alt="IIT Gandhinagar Logo" style={logoStyle} />
+        <img src="/enphase.png" alt="Enphase Logo" style={logoStyle} />
       </div>
       
       <div style={headerStyle}>
         <h1>VidyutAI - AI Center of Excellence</h1>
-        <h2 style={{fontSize: "1.5rem", color: "#5a9f7e", marginTop: "1rem"}}>Green Energy Transition Dashboard</h2>
+        <h2 style={{fontSize: "1.5rem", color: "#5a9f7e", marginTop: "1rem"}}>Smart Battery Safety Diagnostic System</h2>
       </div>
 
       <div style={sectionStyle}>
         <h2>About the Project</h2>
         <p style={descriptionStyle}>
-          IIT Gandhinagar is leading AI Center of Excellence on Sustainability for Green Energy Transition: VidyutAI. 
-          Under this project student will develop a state-of-art dashboard for enabling renewable energy integration, 
-          carbon emissions, cost-benefit analysis with data driven automated operation.
+          IIT Gandhinagar is leading AI Center of Excellence on Sustainability for Green Energy Transition: MAHA-EV-DASHBOARD. 
+          This project focuses on developing a scalable smart battery safety diagnostic system with multi-modal sensing 
+          of Li-ion battery pack's parameters, namely gas emission, temperature, pressure, and voltage, with subsequent 
+          physics-guided ML-powered signature analysis for early detection of Thermal Runaway (TR).
         </p>
       </div>
 
       <div style={sectionStyle}>
-        <h2>Key Features</h2>
+        <h2>Key Focus Areas</h2>
         <ul style={{marginTop: "1rem", lineHeight: "2", color: "#555"}}>
-          <li>Renewable Energy Integration Analysis</li>
-          <li>Carbon Emissions Tracking & Monitoring</li>
-          <li>Cost-Benefit Analysis Tools</li>
-          <li>Data-Driven Automated Operations</li>
-          <li>Real-time Dashboard Visualization</li>
+          <li>🔋 Li-ion Battery Safety & Thermal Runaway Detection</li>
+          <li>🌡️ Multi-modal Sensing (Temperature, Pressure, Gas, Voltage)</li>
+          <li>🤖 Physics-Guided Machine Learning Models</li>
+          <li>📡 IoT-MCU Integration for Real-time Monitoring</li>
+          <li>⚡ Field-Deployable Smart Diagnostic System</li>
         </ul>
       </div>
 

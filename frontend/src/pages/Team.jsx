@@ -38,15 +38,22 @@ function Team() {
       <div style={headerStyle}>
         <h1>Project Team</h1>
         <p style={subtitleStyle}>
-          Team members working on VidyutAI Dashboard
+          Team members working on This Project
         </p>
       </div>
 
       <div style={listStyle}>
         <ul style={{listStyle: "none", padding: 0}}>
-          <li style={listItemStyle}>Chaitanya Attanti – Backend & Database</li>
-          <li style={listItemStyle}>Team Member 2 – Frontend</li>
-          <li style={{...listItemStyle, borderBottom: "none"}}>Team Member 3 – Research</li>
+          <li style={listItemStyle}>Prof. Pallavi Bharadwaj (PI)</li>
+          <li style={listItemStyle}>Dr Sanjeev Patil (Project Manager)</li>
+          <li style={listItemStyle}>Dr Ashish Prajapati (Project Scientist-II)</li>
+          <li style={listItemStyle}>Dr. Sirsa Aditya (Project Scientist-I)</li>
+          <li style={listItemStyle}>Samsaptak Ghosh (Project Scientist-I)</li>
+          <li style={listItemStyle}>Shiv Shankar Sinha (PhD Student)</li>
+          <li style={listItemStyle}>Yash Nileshkumar Desai (MTech Student)</li>
+          <li style={listItemStyle}>Ambika Biswas Neela (PhD Student)</li>
+          <li style={listItemStyle}>Arpita Sarcar (PhD Student)</li>
+          <li style={{...listItemStyle, borderBottom: "none"}}>Harsh Kumar (PhD Student)</li>
         </ul>
       </div>
     </div>

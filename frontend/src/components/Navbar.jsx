@@ -42,10 +42,11 @@ function Navbar() {
   return (
     <nav style={navStyle}>
       <div style={logoContainerStyle}>
-        <div style={logoTextStyle}>SPEL - VidyutAI Dashboard</div>
+        <div style={logoTextStyle}>MAHA-EV-DASHBOARD</div>
       </div>
       <div style={navLinksStyle}>
         <Link to="/" style={getLinkStyle("/")}>Home</Link>
+        <Link to="/deliverables" style={getLinkStyle("/deliverables")}>Deliverables</Link>
         <Link to="/datasets" style={getLinkStyle("/datasets")}>Datasets</Link>
         <Link to="/team" style={getLinkStyle("/team")}>Team</Link>
       </div>
