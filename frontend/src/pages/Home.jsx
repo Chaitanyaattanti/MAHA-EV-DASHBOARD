@@ -97,11 +97,11 @@ function Home() {
       <div style={sectionStyle}>
         <h2>Key Focus Areas</h2>
         <ul style={{marginTop: "1rem", lineHeight: "2", color: "#555"}}>
-          <li>🔋 Li-ion Battery Safety & Thermal Runaway Detection</li>
-          <li>🌡️ Multi-modal Sensing (Temperature, Pressure, Gas, Voltage)</li>
-          <li>🤖 Physics-Guided Machine Learning Models</li>
-          <li>📡 IoT-MCU Integration for Real-time Monitoring</li>
-          <li>⚡ Field-Deployable Smart Diagnostic System</li>
+          <li> Li-ion Battery Safety & Thermal Runaway Detection</li>
+          <li> Multi-modal Sensing (Temperature, Pressure, Gas, Voltage)</li>
+          <li> Physics-Guided Machine Learning Models</li>
+          <li> IoT-MCU Integration for Real-time Monitoring</li>
+          <li> Field-Deployable Smart Diagnostic System</li>
         </ul>
       </div>
 

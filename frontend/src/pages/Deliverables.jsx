@@ -84,12 +84,12 @@ function Deliverables() {
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h1>Project Deliverables</h1>
+        <h1>Timeline and Outcomes </h1>
         <p style={subtitleStyle}>
           Three-year timeline for Smart Battery Safety Diagnostic System development
         </p>
       </div>
-
+    
       <div style={{marginBottom: "2rem", padding: "1.5rem", background: "#f9f9f9", borderRadius: "8px", border: "1px solid #ddd"}}>
         <h3 style={{color: "#5a9f7e", marginBottom: "1rem"}}>Project Overview</h3>
         <p style={{color: "#555", lineHeight: "1.8"}}>
