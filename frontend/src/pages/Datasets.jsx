@@ -98,7 +98,7 @@ function Datasets() {
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h1>Research Datasets</h1>
+        <h1> Datasets Used</h1>
         <p style={subtitleStyle}>
           Explore the datasets used in renewable energy and sustainability research
         </p>
