@@ -11,6 +11,18 @@ app.use(express.json());
 // Serve static files from datasets folder
 app.use('/files', express.static(path.join(__dirname, 'datasets')));
 
+// Root endpoint
+app.get("/", (req, res) => {
+  res.json({ 
+    message: "VidyutAI Backend API Server",
+    status: "Running",
+    endpoints: {
+      datasets: "GET /datasets - Get all dataset metadata",
+      download: "GET /download/:filename - Download dataset file"
+    }
+  });
+});
+
 app.get("/datasets", (req, res) => {
   const sql = `
     SELECT dataset_name, dataset_description, dataset_source, dataset_url
