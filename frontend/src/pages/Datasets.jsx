@@ -122,8 +122,14 @@ function Datasets() {
             <p style={sourceStyle}>
               <strong style={{color: "#5a9f7e"}}>Source:</strong> {d.dataset_source}
             </p>
-            <button 
-              onClick={() => handleDownload(d.dataset_url, d.dataset_name)}
+            <a 
+              href={
+                d.dataset_url.startsWith('http') 
+                  ? d.dataset_url 
+                  : `${API_URL}/download/${d.dataset_url}`
+              }
+              target="_blank"
+              rel="noopener noreferrer"
               style={buttonStyle}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = "#3d7a5e";
@@ -133,7 +139,7 @@ function Datasets() {
               }}
             >
               Download Dataset
-            </button>
+            </a>
           </div>
         ))
       )}
