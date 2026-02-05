@@ -35,9 +35,42 @@ app.get("/datasets", (req, res) => {
   `;
 
   db.query(sql, (err, result) => {
+    // Define fallback data (The actual datasets you want to show)
+    const fallbackData = [
+      {
+        dataset_name: "LG 18650HG2 Li-ion Battery Data",
+        dataset_description: "High-precision lithium-ion battery testing data from McMaster University. Includes charge-discharge cycles, voltage-current measurements, and thermal data.",
+        dataset_source: "Kollmeyer et al. (2020), Mendeley Data",
+        dataset_url: "dataset1.zip"
+      },
+      {
+        dataset_name: "Mechanically Induced Thermal Runaway",
+        dataset_description: "Comprehensive safety testing data examining thermal runaway behavior in Li-ion batteries across various applications.",
+        dataset_source: "Lin et al. (2024), Mendeley Data",
+        dataset_url: "dataset2.zip"
+      },
+      {
+          dataset_name: "Mechanically Induced Thermal Runaway (V1)",
+          dataset_description: "Initial version of comprehensive safety testing data examining thermal runaway behavior in Li-ion batteries.",
+          dataset_source: "Lin et al. (2023), Mendeley Data",
+          dataset_url: "dataset3.zip"
+      },
+      {
+          dataset_name: "CALCE Battery Data",
+          dataset_description: "Battery testing datasets and related resources from the CALCE (Center for Advanced Life Cycle Engineering) Battery Data repository.",
+          dataset_source: "CALCE, University of Maryland",
+          dataset_url: "https://calce.umd.edu/battery-data"
+      }
+    ];
+
     if (err) {
-      res.status(500).json({ error: "Database error" });
+      console.log("⚠️ Database error, serving fallback data:", err.message);
+      res.json(fallbackData);
+    } else if (result.length === 0) {
+      console.log("⚠️ Database empty, serving fallback data");
+      res.json(fallbackData);
     } else {
+      console.log("✅ Serving data from database");
       res.json(result);
     }
   });
