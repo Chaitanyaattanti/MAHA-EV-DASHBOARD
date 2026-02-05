@@ -15,12 +15,22 @@ app.use(express.json());
 // Serve static files from datasets folder
 app.use('/files', express.static(path.join(__dirname, 'datasets')));
 
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.json({ 
+    status: "OK",
+    timestamp: new Date().toISOString(),
+    database: db.isConnected ? db.isConnected() : "unknown"
+  });
+});
+
 // Root endpoint
 app.get("/", (req, res) => {
   res.json({ 
     message: "VidyutAI Backend API Server",
     status: "Running",
     endpoints: {
+      health: "GET /health - Service health check",
       datasets: "GET /datasets - Get all dataset metadata",
       download: "GET /download/:filename - Download dataset file"
     }

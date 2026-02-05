@@ -1,35 +1,39 @@
 const mysql = require("mysql2");
 require('dotenv').config();
 
-// Use a connection pool instead of a single connection
-// This handles lost connections and concurrent requests better
+console.log("🔧 DB Config:", {
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT
+});
+
 const pool = mysql.createPool({
   host: process.env.DB_HOST || "localhost",
   user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD || "Chaitu@2006",
-  database: process.env.DB_NAME || "cur",
-  port: process.env.DB_PORT || 3306,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME || "railway",
+  port: parseInt(process.env.DB_PORT) || 3306,
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 0,
+  connectTimeout: 10000,
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 0
 });
 
-// Test the connection on startup
+let dbConnected = false;
+
 pool.getConnection((err, connection) => {
   if (err) {
-    console.error("❌ FATAL: Database Connection Failed!");
-    console.error("Error Code:", err.code);
-    console.error("Error Message:", err.message);
-    console.error("Connection Details (masked):", {
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER,
-        database: process.env.DB_NAME,
-        port: process.env.DB_PORT
-    });
+    console.error("❌ DB Connection Failed:", err.code, err.message);
+    dbConnected = false;
   } else {
-    console.log("✅ Successfully connected to MySQL Database");
+    console.log("✅ MySQL Connected Successfully");
+    dbConnected = true;
     connection.release();
   }
 });
 
 module.exports = pool;
+module.exports.isConnected = () => dbConnected;
