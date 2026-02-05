@@ -36,8 +36,10 @@ app.get("/datasets", (req, res) => {
 
   db.query(sql, (err, result) => {
     if (err) {
-      res.status(500).json({ error: "Database error" });
+      console.error("❌ Database Query Error in /datasets:", err);
+      res.status(500).json({ error: "Database error", details: err.message });
     } else {
+      console.log(`✅ Fetched ${result.length} datasets`);
       res.json(result);
     }
   });
