@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { API_URL } from "../config";
 
 function Datasets() {
   const [datasets, setDatasets] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_URL}/datasets`)
+    fetch("http://localhost:3000/datasets")
       .then(res => res.json())
       .then(data => {
         setDatasets(data);
@@ -25,7 +24,7 @@ function Datasets() {
       window.open(url, '_blank');
     } else {
       // Local file - use download endpoint
-      const downloadUrl = `${API_URL}/download/${url}`;
+      const downloadUrl = `http://localhost:3000/download/${url}`;
       const link = document.createElement('a');
       link.href = downloadUrl;
       link.download = name || 'dataset';
@@ -99,9 +98,9 @@ function Datasets() {
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h1> Datasets Used</h1>
+        <h1>Datasets Used</h1>
         <p style={subtitleStyle}>
-          Explore the datasets used in renewable energy and sustainability research
+          Explore the datasets used in battery research and electric vehicles
         </p>
       </div>
 
